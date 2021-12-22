@@ -3116,6 +3116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 10
+  laserMakerPrefab: {fileID: 100000, guid: 5a7682c244a150b49965c007720bdbb7, type: 3}
 --- !u!114 &2544710778247837078
 MonoBehaviour:
   m_ObjectHideFlags: 0
