@@ -10,6 +10,8 @@ public class LaserPointer : MonoBehaviour
     [Range(5.0f, 20.0f)]
     public float maxDistance = 10.0f;
 
+    public GameObject laserMaker;
+
     // Start is called before the first frame update
     void Start()
     {
