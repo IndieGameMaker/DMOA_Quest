@@ -27,8 +27,13 @@ public class LaserPointer : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
         {
             laser.SetPosition(1, new Vector3(0, 0, hit.distance));
-            laserMaker.transform.position = hit.point + (laserMaker.transform.up * 0.01f);
+            laserMaker.transform.position = hit.point + (Vector3.up * 0.02f);
             laserMaker.transform.rotation = Quaternion.LookRotation(hit.normal);
+
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
+            {
+                StartCoroutine(Teleport(hit.point));
+            }
         }
         else
         {
@@ -36,5 +41,18 @@ public class LaserPointer : MonoBehaviour
             laserMaker.transform.position = transform.position + (transform.forward * maxDistance);
             laserMaker.transform.rotation = Quaternion.LookRotation(transform.forward);
         }
+    }
+
+    IEnumerator Teleport(Vector3 pos)
+    {
+        OVRScreenFade.instance.fadeTime = 0.0f;
+        OVRScreenFade.instance.FadeOut();
+
+        transform.root.position = pos;
+
+        yield return new WaitForSeconds(0.15f);
+
+        OVRScreenFade.instance.fadeTime = 0.2f;
+        OVRScreenFade.instance.FadeIn();
     }
 }
