@@ -57,5 +57,11 @@ public class ControllerManager : MonoBehaviour
         {
             Debug.Log("오른쪽 핸드 그립");
         }
+
+        if (OVRInput.Get(OVRInput.Touch.PrimaryThumbstick, rightController))
+        {
+            Vector2 pos = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, rightController);
+            Debug.Log($"Thumstick Pos = ({pos.x}/{pos.y})");
+        }
     }
 }
