@@ -62,6 +62,9 @@ public class ControllerManager : MonoBehaviour
         {
             Vector2 pos = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, rightController);
             Debug.Log($"Thumstick Pos = ({pos.x}/{pos.y})");
+
+            Vector3 moveDir = new Vector3(pos.x, transform.position.y, pos.y);
+            cc.SimpleMove(moveDir.normalized * moveSpeed);
         }
     }
 }
