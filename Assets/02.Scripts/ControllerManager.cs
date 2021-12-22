@@ -43,6 +43,9 @@ public class ControllerManager : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, rightController))
         {
             Debug.Log("오른쪽 컨트롤러 Index Trigger Down");
+
+            float value = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, rightController);
+            Debug.Log($"오른쪽 Index Value {value}");
         }
 
         if (OVRInput.GetDown(handButton, leftController))
