@@ -67,4 +67,14 @@ public class ControllerManager : MonoBehaviour
             cc.SimpleMove(moveDir.normalized * moveSpeed);
         }
     }
+
+    //헵틱 (진동효과)
+    IEnumerator Haptic(float duration)
+    {
+        OVRInput.SetControllerVibration(0.8f, 0.5f, rightController);
+
+        yield return new WaitForSeconds(duration);
+
+        OVRInput.SetControllerVibration(0, 0, rightController);
+    }
 }
