@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControllerManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ControllerManager : MonoBehaviour
 
     private CharacterController cc;
     public float moveSpeed = 1.5f;
+    public Image bar;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,8 @@ public class ControllerManager : MonoBehaviour
             Debug.Log("오른쪽 컨트롤러 Index Trigger Down");
 
             float value = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, rightController);
-            Debug.Log($"오른쪽 Index Value {value}");
+            bar.fillAmount = value;
+            //Debug.Log($"오른쪽 Index Value {value}");
         }
 
         if (OVRInput.GetDown(handButton, leftController))
