@@ -48,7 +48,12 @@ public class ControllerManager : MonoBehaviour
 
             float value = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, rightController);
             bar.fillAmount = value;
-            //Debug.Log($"오른쪽 Index Value {value}");
+            Debug.Log($"오른쪽 Index Value {value}");
+        }
+
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, rightController))
+        {
+            bar.fillAmount = 0.0f;
         }
 
         if (OVRInput.GetDown(handButton, leftController))
