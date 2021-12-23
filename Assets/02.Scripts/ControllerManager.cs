@@ -85,7 +85,7 @@ public class ControllerManager : MonoBehaviour
         Vector3 pos1 = OVRInput.GetLocalControllerPosition(rightController);
         Quaternion rot = OVRInput.GetLocalControllerRotation(rightController);
 
-        text.text = $" pos=({pos1.x},{pos1.y},{pos1.z}) \n rot=({rot.eulerAngles.x}, {rot.eulerAngles.y}, {rot.eulerAngles.z})";
+        text.text = $" pos=({pos1.x:0.00},{pos1.y:0.00},{pos1.z:0.00}) \n rot=({rot.eulerAngles.x:0.00}, {rot.eulerAngles.y:0.00}, {rot.eulerAngles.z:0.00})";
     }
 
     //헵틱 (진동효과)
