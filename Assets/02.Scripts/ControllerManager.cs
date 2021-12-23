@@ -66,11 +66,17 @@ public class ControllerManager : MonoBehaviour
             Vector3 moveDir = new Vector3(pos.x, transform.position.y, pos.y);
             cc.SimpleMove(moveDir.normalized * moveSpeed);
         }
+
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger, rightController))
+        {
+            StartCoroutine(Haptic(0.5f));
+        }
     }
 
     //헵틱 (진동효과)
     IEnumerator Haptic(float duration)
     {
+        // (주파수, 진폭, 컨트롤러)
         OVRInput.SetControllerVibration(0.8f, 0.5f, rightController);
 
         yield return new WaitForSeconds(duration);
