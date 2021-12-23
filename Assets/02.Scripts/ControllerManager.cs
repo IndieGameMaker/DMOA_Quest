@@ -14,7 +14,7 @@ public class ControllerManager : MonoBehaviour
     private CharacterController cc;
     public float moveSpeed = 1.5f;
     public Image bar;
-    public TMP_text text;
+    public TMP_Text text;
 
     // Start is called before the first frame update
     void Start()
