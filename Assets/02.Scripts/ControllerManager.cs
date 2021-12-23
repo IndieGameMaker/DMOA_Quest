@@ -82,7 +82,10 @@ public class ControllerManager : MonoBehaviour
             StartCoroutine(Haptic(0.5f));
         }
 
+        Vector3 pos = OVRInput.GetLocalControllerPosition(rightController);
+        Quaternion rot = OVRInput.GetLocalControllerRotation(rightController);
 
+        text = $" pos=({pos.x},{pos.y},{pos.z}) \n rot=({rot.eulerAngles.x}, {rot.eulerAngles.y}, {rot.eulerAngles.z})";
     }
 
     //헵틱 (진동효과)
