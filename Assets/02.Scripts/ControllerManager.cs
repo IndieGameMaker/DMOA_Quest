@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ControllerManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ControllerManager : MonoBehaviour
     private CharacterController cc;
     public float moveSpeed = 1.5f;
     public Image bar;
+    public TMP_text text;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +81,8 @@ public class ControllerManager : MonoBehaviour
         {
             StartCoroutine(Haptic(0.5f));
         }
+
+
     }
 
     //헵틱 (진동효과)
